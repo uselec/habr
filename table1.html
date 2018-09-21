@@ -1,0 +1,35 @@
+
+<!-- saved from url=(0052)https://cdn.rawgit.com/uselec/habr/master/table.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+    table {margin:0 auto; width: 600px}
+    td {border:1px solid; padding:2px 10px}
+    a {color:blue; cursor:pointer}
+</style>
+</head><body><table onkeyup="sum.click()" onclick="sum.click()">
+    <tbody><tr>
+    <td align="center">Наименование</td><td align="center">Количество</td><td align="center">Цена
+    </td><td><a onclick="foot.parentNode.insertBefore(document.importNode(row.content, true), foot)">+</a>
+    <template id="row"><tr class=row>
+           <td contenteditable><td contenteditable class=count><td contenteditable class=price>
+           <td><a onclick="(t = this.parentNode.parentNode).parentNode.removeChild(t)">-</a></template>
+    </td></tr>
+        <tr class="row">
+           <td contenteditable="">невежество</td><td contenteditable="" class="count">1</td><td contenteditable="" class="price">3
+           </td><td><a onclick="(t = this.parentNode.parentNode).parentNode.removeChild(t)">-</a>
+    </td></tr>
+        <tr class="row">
+           <td contenteditable="">величайший</td><td contenteditable="" class="count">2</td><td contenteditable="" class="price">2
+           </td><td><a onclick="(t = this.parentNode.parentNode).parentNode.removeChild(t)">-</a>
+    </td></tr>
+        <tr class="row">
+           <td contenteditable="">недуг</td><td contenteditable="" class="count">3</td><td contenteditable="" class="price">5
+           </td><td><a onclick="(t = this.parentNode.parentNode).parentNode.removeChild(t)">-</a>
+    </td></tr>
+        <tr class="row">
+           <td contenteditable="">человечества</td><td contenteditable="" class="count">4</td><td contenteditable="" class="price">1
+           </td><td><a onclick="(t = this.parentNode.parentNode).parentNode.removeChild(t)">-</a>
+    </td></tr><tr id="foot">
+    <td colspan="2" align="right"><b>ИТОГО</b>
+    </td><td id="sum" onclick="this.textContent = 0, document.querySelectorAll(&#39;.row&#39;).forEach(i =&gt; {
+        this.textContent = +this.textContent + +i.querySelector(&#39;.count&#39;).textContent * +i.querySelector(&#39;.price&#39;).textContent
+    })">26</td></tr></tbody></table></body></html>
